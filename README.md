@@ -96,7 +96,7 @@
 yarn  rebuild # 或者 npm rebuild
 
 ```
-
+### 在您方便时候也可以在右上角给我 `⭐ Star` ~哦
 ###  开发过程又是什么问题可加 QQ:[504500934](https://ynjiyuan.com "504500934") 进行交流
 ## 如果可以帮助您，您也可以赞助一下喝杯茶
 
@@ -104,4 +104,4 @@ yarn  rebuild # 或者 npm rebuild
 
 ![Pandao editor.md](https://honey.ynjiyuan.com/wxpayqrcode.png "Pandao editor.md")
 
-#### 在您方便时候也可以给我 `⭐ Star` ~哦
+
