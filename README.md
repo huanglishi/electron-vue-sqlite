@@ -17,13 +17,89 @@
 ## 使用说明
 ```javascript
 	#下载项目包
+
 	npm install https://github.com/huanglishi/electron-vue-sqlite.git
+
 	#进入项目目录并安装依赖包
+
 	cd you-project
+
 	yarn # 或者 npm install
+
 	#运行项目
+
 	yarn run dev # 或者 npm run dev
+
+```
+## 特别说明
+#### 1.打包配置
+```javascript
+ "build": {
+    "productName": "Elerp",//项目名 这也是生成的exe文件的前缀名
+    "appId": "com.example.erp",
+    "copyright":"@经和科技",
+    "compression": "store",
+    "directories": {
+      "output": "build"// 输出文件夹
+    },
+    "files": [
+      "dist/electron/**/*"
+    ],
+    "asar": false,// asar打包
+    "nsis": {
+      "oneClick": false,  
+      "allowToChangeInstallationDirectory": true, 
+      "perMachine": true
+    },
+    "mac": {
+      "icon": "build/icons/icon.icns"
+    },
+    "extraResources":  { // 拷贝db\dll等静态文件到指定位置;他在安装文件resources下；
+      "from": "./extraresources/",
+      "to": "extraresources"
+    },
+    "win": {
+      "icon": "build/icons/icon.ico",
+      "extraResources":  { 
+        "from": "./extraresources/",
+        "to": "extraresources"
+      },
+      "target": [
+        {
+          "target": "nsis",  
+          "arch": [ 
+            "x64"
+          ]
+        }
+      ],
+      "publish": [ 
+        {
+          "provider": "generic", 
+          "url": "http://127.0.0.1:8080/updata/" 
+        }
+      ]
+    },
+    "linux": {
+      "icon": "build/icons"
+    }
+  },
+  
+  注：使用sqlite3数据数据库必须加extraResources配置，否则数据打包文件
+  使用remote.app.getPath('userData')方式手动添加到用应文件目录。
+```
+#### 2.数据库文件db放在安装目录
+ 项目根目录建extraresources文件夹，本项目local.db文件放在里面
+#### 3.重新编译
+```javascript
+#sqlite3是新增模块,使用前请先重新编译原生模块
+
+yarn  rebuild # 或者 npm rebuild
+
 ```
 
+###  开发过程又是什么问题可加 QQ:[504500934](https://ynjiyuan.com "504500934") 进行交流
+## 如果可以帮助您，您也可以赞助一下喝杯茶
+
+![image](https://honey.ynjiyuan.com/wxpay.png)
 
 
