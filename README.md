@@ -92,6 +92,7 @@
 #### 3.重新编译
 ```javascript
 #sqlite3是新增模块,使用前请先重新编译原生模块
+我已经配置好您只需执行下面命令即可
 
 yarn  rebuild # 或者 npm rebuild
 
