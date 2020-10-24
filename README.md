@@ -93,6 +93,9 @@
 ```javascript
 #sqlite3是新增模块,使用前请先重新编译原生模块
 我已经配置好您只需执行下面命令即可
+  "scripts": {
+    "rebuild": "electron-rebuild -f -w sqlite3",
+    }
 
 yarn  rebuild # 或者 npm rebuild
 
